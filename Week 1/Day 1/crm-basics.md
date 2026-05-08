@@ -28,7 +28,7 @@ Customer: Once the deal is successfully completed, the person or organization be
 ![Salesforce Values](screenshots/salesforcevalues.png)
 
 ### Salesforce Developer: Quick Look
-![Salesforce Developer](screenshots/salesforce-devloper.png)
+![Salesforce Developer](screenshots/salesforce-devloper-.png)
 
 ### Salesforce CRM
 ![Salesforce CRM](screenshots/salesforce-crm.png)
