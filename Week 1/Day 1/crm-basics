@@ -22,4 +22,16 @@ Contact: After qualification, the lead becomes a known contact in the system.
 Opportunity: A potential deal or transaction is identified and tracked.
 Customer: Once the deal is successfully completed, the person or organization becomes a customer.
 6.Trailhead Progress I have successfully completed the following modules for Day 1: Salesforce Values: Quick Look Salesforce Developer: Quick Look Salesforce CRM Trailhead Playground Management
-7.ScreenShots of completion of work : => Sales force Values:
+## 7. Screenshots of Trailhead Completion
+
+### Salesforce Values: Quick Look
+![Salesforce Values](screenshots/salesforcevalues.png)
+
+### Salesforce Developer: Quick Look
+![Salesforce Developer](screenshots/salesforce-devloper.png)
+
+### Salesforce CRM
+![Salesforce CRM](screenshots/salesforce-crm.png)
+
+### Trailhead Playground Management
+![Trailhead Playground](screenshots/traihead-playground.png)
