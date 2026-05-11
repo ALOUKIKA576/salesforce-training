@@ -1,0 +1,97 @@
+1.App=>
+An app in Salesforce is a collection of tabs, objects, features, and tools grouped together to perform a specific business function. Apps help users work efficiently by providing all required functionalities in one place. Examples include the Sales App and Service App.
+2.Object=>
+An object in Salesforce is similar to a database table that stores information about a particular entity. Objects contain records and fields. Salesforce provides standard objects like Account and Contact, and users can also create custom objects.
+3.Record=>
+A record is a single entry or row within an object. It stores complete information about a specific item. For example, a single customer’s details stored in the Contact object represent a record.
+4.Field
+A field is an individual data element within an object, similar to a column in a table. Fields store specific pieces of information such as Name, Email, Phone Number, or Address.Standard Objects vs Custom objects
+5.Standard Objects
+Standard objects are the pre-built objects provided by Salesforce by default. They are designed to store common business data used in CRM applications. These objects come with predefined fields, relationships, and functionalities. Examples of standard objects include Account, Contact, Lead, Opportunity, and Case.
+Custom Objects
+Custom objects are objects created by users or administrators to store information specific to their organization or business needs. They allow companies to extend Salesforce functionality beyond the standard objects. Custom objects can have custom fields, relationships, page layouts, and validations. Examples include Property, Offer, Employee, or Student objects created according to business requirements.
+College Data Model=>
+A College Data Model is used to organize and manage the information related to students, faculty, departments, courses, and enrollments in a college. In Salesforce, this data is stored using objects, fields, records, and relationships.
+Objects in the College Data Model
+Student Object
+The Student object stores information about students such as student name, roll number, date of birth, email, phone number, and address.
+Faculty Object
+The Faculty object contains details about teachers and staff members including faculty name, employee ID, qualification, department, email, and contact number.
+Department Object
+The Department object stores information about different departments in the college such as department name, department code, head of department, and location.
+Course Object
+The Course object stores details of courses offered by the college. It includes course name, course code, credits, and duration.
+Enrollment Object
+The Enrollment object is used to track which students are enrolled in which courses. It contains enrollment number, enrollment date, semester, and status.
+Relationships in the College Data Model
+A Department can have many Faculty members.
+A Department can offer many Courses.
+A Faculty member can teach multiple Courses.
+A Student can enroll in many Courses.
+The Enrollment object acts as a junction object between Student and Course.
+Diagram
+Department
+   |\
+   | \
+   |  \ 
+Faculty  Course
+             |
+             |
+         Enrollment
+             |
+          Student
+4. Formula Fields
+
+Formula fields are custom fields in Salesforce that automatically calculate values based on other fields. They help users avoid manual calculations and provide accurate real-time information.
+Example 1: Days Remaining for Contract Expiry
+A formula field can calculate the number of days remaining before a contract expires.
+ Formula
+EndDate - TODAY()
+Explanation
+* `EndDate` represents the contract end date.
+* `TODAY()` returns the current date.
+* The formula subtracts today’s date from the contract end date to show the remaining days.
+# Example 2: Discounted Price Calculation
+
+A formula field can calculate the discounted amount of a product.
+Formula
+Amount - (Amount * 0.10)
+Explanation
+* `Amount` is the original price.
+* `0.10` represents a 10% discount.
+* The formula automatically calculates the final amount after discount.
+ Example 3: Full Name Formula
+A formula field can combine first name and last name into a full name.
+Formula
+FirstName & " " & LastName
+* `&` is used to join text values.
+* The formula combines first name and last name with a space in between.
+ 5. Validation Rules
+Validation rules ensure that users enter correct and meaningful data before saving records. If invalid data is entered, Salesforce displays an error message.
+Example 1: ZIP Code Validation
+This rule checks whether the contact ZIP code matches the account ZIP code.
+AND(
+NOT(ISBLANK(AccountId)),
+MailingPostalCode <> Account.ShippingPostalCode
+)
+* `NOT(ISBLANK(AccountId))` checks whether the contact is linked to an account.
+* `<>` means “not equal to”.
+* If the contact ZIP code and account ZIP code are different, Salesforce shows an error message.
+Example 2: Account Number Length Validation
+This rule ensures that the account number contains exactly 8 characters.
+Formula
+LEN(AccountNumber) <> 8
+ Explanation
+* `LEN()` calculates the number of characters.
+* If the account number is not 8 characters long, the record cannot be saved.
+Example 3: Current Year Date Validation
+This rule ensures that the entered date belongs to the current year.
+ Formula
+YEAR(My_Date__c) <> YEAR(TODAY())
+* `YEAR()` extracts the year from a date.
+* The validation rule checks whether the entered year matches the current year.
+6. Reflection: Why Structured Enterprise Data Matters=>
+Structured enterprise data is important because it helps organizations store, manage, and access information in an organized manner. In Salesforce, structured data is maintained using objects, records, fields, and relationships.
+Well-structured data improves accuracy, reduces duplication, and helps users quickly find information. It supports better decision-making through reports, dashboards, and analytics. Structured data also improves automation, security, and communication across departments.
+For example, in a college management system, structured data helps track students, courses, faculty, and enrollments efficiently. In businesses, it helps manage customers, sales, and services effectively.
+Therefore, structured enterprise data is essential for improving productivity, maintaining data quality, and supporting business growth
